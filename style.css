@@ -92,8 +92,13 @@ input[type="number"] {
   border-color: var(--green);
 }
 
+#add:focus {
+  outline: none;
+  border-color: var(--green);
+  background-color: var(--green);
+}
+
 #add:active {
-  box-shadow: none;
   background-color: var(--green);
 }
 
@@ -148,6 +153,12 @@ input[type="number"] {
 
 #delete-item:active {
   box-shadow: none;
+  background-color: var(--red);
+}
+
+#delete-item:focus {
+  outline: none;
+  border-color: var(--red);
   background-color: var(--red);
 }
 
