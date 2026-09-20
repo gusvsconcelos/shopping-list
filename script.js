@@ -56,6 +56,7 @@ function createElement(item) {
   itemPrice.className = "itemPrice";
 
   deleteItem.textContent = "Excluir";
+  deleteItem.id = "delete-item";
   deleteItem.onclick = function () {
     removeItem(item.id);
     getTotal();
@@ -146,6 +147,7 @@ function handleDrag() {
     if (!card) return;
 
     dragged = card;
+    dragged.style.background = "#dce9e2";
   });
 
   cardContainer.addEventListener("dragover", (event) => {
@@ -163,7 +165,16 @@ function handleDrag() {
     }
   });
 
-  cardContainer.addEventListener("dragend", saveItemOrder);
+  cardContainer.addEventListener("dragend", (event) => {
+    const card = event.target.closest(".card");
+
+    if (!card) return;
+
+    card.style.background = "";
+    dragged = null;
+
+    saveItemOrder();
+  });
 }
 
 function handleClick() {

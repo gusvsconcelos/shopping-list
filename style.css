@@ -1,4 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Slabo+13px&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
+
+:root {
+  --main-bg-color: #f9f6ef;
+  --main-fg-color: #282828;
+  --green: #669b80;
+  --light-green: #9fc2b1;
+  --red: #e95745;
+  --light-red: #ed8f84;
+
+  --font-family: "Patrick Hand", cursive;
+}
 
 * {
   box-sizing: border-box;
@@ -10,7 +21,8 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  font-family: "Slabo 13px", serif;
+  font-family: var(--font-family);
+  background-color: var(--main-bg-color);
 }
 
 main {
@@ -27,26 +39,30 @@ main {
 }
 
 input {
-  margin: 6px;
+  margin: 0px;
   padding: 12px;
   border: none;
-  border-radius: 12px;
-  box-shadow: 2px 2px 6px gray;
-  background-color: aliceblue;
-  font-family: "Slabo 13px", serif;
+  background-color: var(--main-bg-color);
+  font-family: var(--font-family);
   font-size: 14px;
 }
 
 #item {
-  width: 160px;
+  width: 176px;
+  border-left: 1px solid var(--main-fg-color);
+  border-top: 1px solid var(--main-fg-color);
+  border-bottom: 1px solid var(--main-fg-color);
 }
 
 #price {
   width: 96px;
+  border-left: 1px solid var(--main-fg-color);
+  border-top: 1px solid var(--main-fg-color);
+  border-bottom: 1px solid var(--main-fg-color);
 }
 
 input:focus {
-  outline: 2px solid lightcyan;
+  outline: none;
 }
 
 input::-webkit-inner-spin-button,
@@ -59,47 +75,44 @@ input[type="number"] {
   appearance: textfield;
 }
 
-button {
-  margin: 6px;
+#add {
+  width: 48px;
   padding: 12px;
-  border: 1px solid lightcyan;
-  border-radius: 12px;
-  box-shadow: 2px 2px 6px gray;
-  background-color: lightcyan;
-  font-family: "Slabo 13px", serif;
+  border: 1px solid var(--main-fg-color);
+  background-color: var(--light-green);
+  font-family: var(--font-family);
   font-weight: bold;
-  color: darkcyan;
+  font-size: 14px;
+  color: var(--main-bg-color);
   cursor: pointer;
   transition: 0.2s;
 }
 
-button:hover {
-  border-color: cyan;
+#add:hover {
+  border-color: var(--green);
 }
 
-button:active {
+#add:active {
   box-shadow: none;
-  background-color: darkcyan;
-  color: lightcyan;
+  background-color: var(--green);
 }
 
 #card-container {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
   width: min(320px, 100%);
-  margin-top: 24px;
+  margin: 24px 0 24px 0;
 }
 
 .card {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  padding: 16px;
-  border-radius: 12px;
-  box-shadow: 2px 2px 6px gray;
-  background-color: aliceblue;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--main-fg-color);
+  background-color: var(--main-bg-color);
 }
 
 .itemName,
@@ -108,30 +121,49 @@ button:active {
 }
 
 .itemName {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
 }
 
 .itemPrice {
-  font-size: 16px;
-  color: darkcyan;
+  font-size: 14px;
+  color: var(--green);
+}
+
+#delete-item {
+  padding: 12px;
+  border: 1px solid var(--main-fg-color);
+  background-color: var(--light-red);
+  font-family: var(--font-family);
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--main-bg-color);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#delete-item:hover {
+  border-color: var(--red);
+}
+
+#delete-item:active {
+  box-shadow: none;
+  background-color: var(--red);
 }
 
 #placeholder {
-  padding: 32px;
-  border: 1px dashed gray;
-  border-radius: 12px;
-  color: gray;
+  margin: 0;
+  padding: 24px;
+  border: 1px dashed var(--main-fg-color);
   text-align: center;
+  color: var(--main-fg-color);
+  opacity: 70%;
 }
 
 #total {
-  margin-top: 24px;
   padding: 12px;
-  border: 1px solid lightcyan;
-  border-radius: 12px;
-  box-shadow: 2px 2px 6px gray;
-  background-color: lightcyan;
+  background-color: var(--light-green);
   font-weight: bold;
-  color: darkcyan;
+  font-size: 14px;
+  color: var(--main-bg-color);
 }
